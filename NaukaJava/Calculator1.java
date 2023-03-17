@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Calculator1 {
     public static void main(String[]args){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Czesc podaj 1 liczbe");
