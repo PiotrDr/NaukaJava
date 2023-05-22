@@ -1,5 +1,6 @@
 public class StudentCheck {
     public static void main(String[] args) {
+        Student.infoUczelnia();
         Student nr1 = new Student();
         Student nr2 = new Student();
         Student nr3 = new Student();
