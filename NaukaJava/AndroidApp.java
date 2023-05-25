@@ -1,3 +1,5 @@
+import Drivers.WebDriver;
+
 public class AndroidApp extends App{
 
     public AndroidApp(String name) {
@@ -7,4 +9,5 @@ public class AndroidApp extends App{
     public void runAndroidApp () {
         System.out.println("Ta aplikacja działa na androidzie");
     }
+
 }

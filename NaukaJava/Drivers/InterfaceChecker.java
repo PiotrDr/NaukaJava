@@ -3,22 +3,26 @@ package Drivers;
 import Drivers.ChromeDriver;
 import Drivers.FirefoxDriver;
 
+import java.sql.Driver;
+
 public class InterfaceChecker {
-    public static void main(String[] args) throws NoValidBrowserName {
-        WebDriver Driver = getDriver("Firefoxdsa");
+    public static void main(String[] args){
+        DriverType[] DriverTypes = DriverType.values();
+        for(int i=0; i<DriverTypes.length; i++) {
+            System.out.println(DriverTypes[i].name);
+            System.out.println(DriverTypes[i].path);
+        }
+        WebDriver Driver = getDriver(DriverType.CHROME);
         Driver.get();
         Driver.findElementBy();
-       /* FirefoxDriver firefoxDriver = new FirefoxDriver();
-        firefoxDriver.get();
-        firefoxDriver.findElementBy();*/
     }
 
-    private static WebDriver getDriver(String name) throws NoValidBrowserName {
-        if (name.equals("Chrome")) {
+    private static WebDriver getDriver(DriverType type){
+        if (type.name.equals("chrome")) {
+            System.out.println(type.path);
             return new ChromeDriver();
-        } else if (name.equals("Firefox")) {
-            return new FirefoxDriver();
         }
-        throw new NoValidBrowserName("No valid browser name.");
+        System.out.println(type.path);
+            return new FirefoxDriver();
     }
 }
